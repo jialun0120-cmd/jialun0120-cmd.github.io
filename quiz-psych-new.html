@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content=width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no><title>国家心理健康网·心理咨询师题库</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,PingFang SC,Noto Sans SC,sans-serif;background:#0b0e17;color:#e8e6e3;min-height:100vh}
+.h{position:fixed;top:0;left:0;right:0;z-index:100;padding:.65rem 1rem;background:rgba(11,14,23,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);display:flex;align-items:center;gap:.6rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.h .b{background:rgba(80,200,120,.15);color:#50c878;font-size:.7rem;padding:.15rem .55rem;border-radius:4px;white-space:nowrap}
+.h h1{font-size:.92rem;font-weight:600;white-space:nowrap;overflow:hidden;flex:1}
+.h .bt{background:none;border:none;color:rgba(255,255,255,.5);font-size:.82rem;cursor:pointer;display:none;padding:2px 6px}
+.w{padding:4.2rem 0 2rem}
+.p{padding:.75rem;max-width:700px;margin:0 auto}
+.sec-title{font-size:1.05rem;font-weight:600;margin-bottom:.65rem}
+.sec-sub{font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:1rem;line-height:1.5}
+.st{display:flex;gap:.4rem;margin-bottom:.85rem;overflow-x:auto;padding-bottom:2px}
+.stb{padding:.35rem .65rem;border-radius:6px;font-size:.72rem;cursor:pointer;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.6);white-space:nowrap;font-weight:500}
+.stb.on{background:rgba(80,200,120,.12);border-color:rgba(80,200,120,.35);color:#50c878}
+.cc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.75rem 1rem;margin-bottom:.65rem;cursor:pointer;display:flex;align-items:center;gap:.75rem}
+.cc:active{background:rgba(255,255,255,.08);border-color:rgba(80,200,120,.3)}
+.cc .n{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.cc .n.d{background:rgba(80,200,120,.1);color:#50c878}
+.cc .n.x{background:rgba(80,200,120,.1);color:#50c878}
+.cc .n.p{background:rgba(80,200,120,.1);color:#50c878}
+.cc .i{flex:1;min-width:0}
+.cc .t{font-size:.88rem;font-weight:600;margin-bottom:.08rem}
+.cc .m{font-size:.72rem;color:rgba(255,255,255,.45)}
+.cc .a{color:rgba(255,255,255,.25);font-size:1.2rem;flex-shrink:0}
+.q{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.15rem 1.1rem;margin-bottom:.85rem}
+.qn{font-size:.75rem;color:rgba(80,200,120,.55);margin-bottom:.5rem;display:flex;justify-content:space-between}
+.qt{font-size:.95rem;line-height:1.7;margin-bottom:1rem;font-weight:500}
+.qh{font-size:.73rem;color:rgba(255,255,255,.35);margin-bottom:.8rem}
+.op{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem .85rem;cursor:pointer;font-size:.85rem;line-height:1.5;display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.5rem}
+.op:active{background:rgba(255,255,255,.08)}
+.op .l{width:21px;height:21px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;flex-shrink:0;margin-top:.1rem}
+.cr{border-color:rgba(80,200,120,.5)!important;background:rgba(80,200,120,.07)!important}
+.cr .l{background:rgba(80,200,120,.2)!important;border-color:rgba(80,200,120,.5)!important;color:#50c878!important}
+.wr{border-color:rgba(255,90,90,.45)!important;background:rgba(255,90,90,.07)!important}
+.wr .l{background:rgba(255,90,90,.2)!important;border-color:rgba(255,90,90,.45)!important;color:#ff5a5a!important}
+.sl{border-color:rgba(80,200,120,.4)!important;background:rgba(80,200,120,.06)!important}
+.sl .l{background:rgba(80,200,120,.2)!important;border-color:rgba(80,200,120,.4)!important;color:#50c878!important}
+.di{pointer-events:none;opacity:.7}
+.ex{display:none;margin-top:.85rem;padding:.8rem .9rem;background:rgba(80,200,120,.06);border:1px solid rgba(80,200,120,.1);border-radius:10px;font-size:.8rem;line-height:1.6;color:rgba(255,255,255,.7)}
+.bn{width:100%;padding:.82rem;border:none;border-radius:10px;background:linear-gradient(135deg,#2d8a4e,#50c878);color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;margin-top:.4rem}
+.bn:disabled{opacity:.35;cursor:not-allowed}
+.rs{text-align:center;padding:1rem .75rem 2rem}
+.rs .sc{width:120px;height:120px;border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border:3px solid;font-size:2.4rem;font-weight:700}
+.rs h2{font-size:1.15rem;margin-bottom:.4rem}
+.rs .rp{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
+.rv{text-align:left;margin-bottom:1.2rem}
+.rv .rvt{font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:.65rem;font-weight:500}
+.rv .rvi{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.rv .rvi .rqq{font-size:.8rem;line-height:1.5;margin-bottom:.2rem}
+.rv .rvi .rqa{font-size:.76rem;color:rgba(255,255,255,.5)}
+.rsb{display:flex;gap:.55rem}
+.rsb button{flex:1;padding:.75rem;border-radius:10px;font-size:.82rem;font-weight:600;cursor:pointer;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#e8e6e3}
+.rsb .rsp{background:linear-gradient(135deg,#2d8a4e,#50c878);border:none;color:#fff}
+</style></head><body>
+<div class=h>
+  <button class=bt id=bt onclick=_gb()>&#8592;</button>
+  <span class=b>国家心理健康网</span>
+  <h1 id=ht>心理咨询师题库</h1>
+</div>
+<div class=w>
+  <div id=ls class=p></div>
+  <div id=qz class=p style=display:none></div>
+  <div id=rs class=p style=display:none></div>
+</div>
+<script>
+var D=[];
+var L='ABCDEFGH'.split('');
+// p=判断题, d=单选题, x=多选题
+// ======== 判断题 (50道, 0-49) ========
+(function(){var qs=[
+[0,'感觉是指人脑对直接作用于感觉器官的客观事物个别属性的反映。',1,'感觉的定义就是人脑对客观事物个别属性的反映。'],
+[1,'心理学是研究人的心理现象及其发生发展活动规律的科学。',1,'心理学的研究对象是心理现象及其规律。'],
+[2,'基础心理学是以正常成人的心理现象为研究对象，总结心理活动最普遍、最一般规律的心理学科。',1,'基础心理学的研究对象是正常成人的心理现象。'],
+[3,'兴奋是指神经活动由静息状态或较弱活动状态转为活动状态或较强活动状态。',1,'这是兴奋的定义。'],
+[4,'抑制是指神经活动由活动状态或较强活动状态转为静息状态或较弱活动状态。',1,'这是抑制的定义。'],
+[5,'知觉是直接作用于感觉器官的客观事物的整体属性在人脑中的反映。',1,'知觉是对事物整体属性的反映。'],
+[6,'记忆是在头脑中积累和保存个体经验的心理过程。',1,'这是记忆的定义。'],
+[7,'定势是指人在进行某种活动前的准备状态，对后面进行的活动有影响。',1,'定势影响后续活动的进行。'],
+[8,'注意是心理活动或意识活动的一个特点，是心理过程的一种状态，不是一种心理过程。',1,'注意是心理状态而非独立心理过程。'],
+[9,'动机是激发个体朝着一定目标活动并维持这种活动的内在心理动力。',1,'动机推动和维持活动。'],
+[10,'应激是在出现意外事件或遇到危险情境时出现的高度紧张的情绪状态。',1,'应激是高度紧张状态。'],
+[11,'社会化的载体包括家庭、学校、大众传媒和参照群体。',1,'这是社会化的四个主要载体。'],
+[12,'自我概念是指个体对自身整体的认知与评价。',1,'自我概念是自我认知的核心。'],
+[13,'从众是指个体在群体压力下放弃自己原有的观点，做出和多数人一致的行为。',1,'从众是受群体影响改变行为。'],
+[14,'第一印象在印象形成中起着非常重要的作用。',1,'首因效应在印象形成中很重要。'],
+[15,'归因是指人们对他人或自己行为原因的推论过程。',1,'归因是对行为原因的解释。'],
+[16,'人格具有独特性和共同性。',1,'人格既有个体独特性也有群体共同性。'],
+[17,'气质是心理活动动力特征的总和，与活动内容无关。',1,'气质是先天形成的，无好坏之分。'],
+[18,'性格是个体对现实稳定的态度和习惯化的行为方式。',1,'性格是后天形成的，有好坏之分。'],
+[19,'马斯洛需要层次理论中最高层次的需要是自我实现的需要。',1,'自我实现是马斯洛需求层次的最顶层。'],
+[20,'情绪和情感具有适应功能、动机功能、组织功能和信号功能。',1,'这是情绪情感的四项基本功能。'],
+[21,'心境是一种微弱、持久且具有弥漫性的情绪状态。',1,'心境的特点是微弱、持久、弥漫性。'],
+[22,'激情是一种强烈、爆发式、短暂的情绪状态。',1,'激情的特点是强烈、爆发、短暂。'],
+[23,'意志行动是人类特有的有意识、有目的、有计划的行动。',1,'意志行动是人的主观能动性的体现。'],
+[24,'知觉恒常性是指当知觉条件改变时，知觉映像依然保持稳定不变。',1,'知觉恒常性有助于稳定认知。'],
+[25,'思维是借助语言、表象或动作实现的，对客观事物间接的、概括的反映。',1,'思维具有间接性和概括性。'],
+[26,'短时记忆的容量为7±2个组块。',1,'米勒提出短时记忆容量为7±2。'],
+[27,'需要是有机体内部的一种不平衡状态，是推动有机体活动的动力源泉。',1,'需要是动机产生的基础。'],
+[28,'能力是顺利完成某种活动所必须具备的心理特征。',1,'能力直接影响活动效率。'],
+[29,'智力通常是指认知能力，包括观察力、记忆力、思维力、想象力等。',1,'智力是认知能力的综合。'],
+[30,'智商(IQ)是衡量智力水平高低的常用指标。',1,'智商反映智力水平。'],
+[31,'心理咨询师与求助者之间只能保持专业咨询关系，不能建立其他关系。',1,'多重关系可能影响咨询客观性。'],
+[32,'保密原则是心理咨询中最重要的伦理原则之一。',1,'保密是咨询关系的基础。'],
+[33,'咨询师应在其专业能力范围内提供服务。',1,'专业胜任力是伦理要求。'],
+[34,'当求助者有自杀风险时，保密原则可以例外。',1,'保密例外可以保护求助者生命安全。'],
+[35,'知情同意是心理咨询必须遵循的基本原则。',1,'知情同意尊重求助者的自主权。'],
+[36,'心理咨询的目标是促进求助者的心理健康和发展。',1,'咨询目标是积极正向的。'],
+[37,'共情是心理咨询师最重要的基本技能之一。',1,'共情是咨询关系建立的关键。'],
+[38,'积极关注是指咨询师以积极态度看待求助者。',1,'积极关注发现求助者的潜能。'],
+[39,'倾听是心理咨询的基本技术，也是一项重要的治疗因素。',1,'倾听让求助者感受到被理解。'],
+[40,'行为主义心理学认为人的行为是后天习得的。',1,'行为主义强调环境对行为的影响。'],
+[41,'人本主义心理学的代表人物是马斯洛和罗杰斯。',1,'人本主义关注人的自我实现。'],
+[42,'心理正常与心理异常是区分心理健康与否的两个基本概念。',1,'正常与异常是质的不同。'],
+[43,'心理咨询主要针对的是有心理困扰的正常人。',1,'心理咨询服务的是心理健康人群。'],
+[44,'心理治疗师和心理咨询师在专业训练上有所不同。',1,'两者在培训和执业范围上有区别。'],
+[45,'团体咨询具有个体咨询不具备的治疗因素。',1,'团体咨询提供人际支持等特殊帮助。'],
+[46,'发展心理学研究个体从出生到死亡的心理发展过程。',1,'发展心理学关注毕生发展。'],
+[47,'埃里克森认为青春期的主要发展任务是建立自我同一性。',1,'自我同一性是青春期的核心发展任务。'],
+[48,'皮亚杰的认知发展理论将儿童发展分为四个阶段。',1,'皮亚杰的理论对教育心理学影响深远。'],
+[49,'心理防御机制在适度使用时有适应价值。',1,'防御机制是自我调节的方式。']
+];for(var i=0;i<qs.length;i++){D.push({num:qs[i][0],q:qs[i][1],o:['正确','错误'],a:qs[i][2],e:qs[i][3],type:'p'})}})();
+// ======== 单选题 (50道, 50-99) ========
+(function(){var qs=[
+[50,'以下哪个选项是人体神经系统的基本结构和功能单位？','神经胶质细胞|神经元|突触|反射弧',1,'神经元是构成神经系统的基本结构和功能单位。'],
+[51,'人脑对直接作用于感觉器官的客观事物的个别属性的反映被称为？','知觉|感觉|记忆|思维',1,'感觉是对事物个别属性的反映。'],
+[52,'我们识别熟悉的品牌标志时，即使标志有部分色块脱落缺失，依然能够准确认出，这体现了知觉的什么特性？','整体性|选择性|恒常性|理解性',0,'知觉整体性指人们将事物的不同属性整合为统一整体来知觉。'],
+[53,'根据记忆内容保持时间的长短进行分类，除了瞬时记忆、短时记忆，还有以下哪一类？','长时记忆|情景记忆|语义记忆|动作记忆',0,'按保持时间长短分为瞬时、短时、长时记忆。'],
+[54,'当遇到突发危险时，人们会产生恐惧情绪，促使个体快速做出躲避行为以保障自身安全，这体现了情绪情感的哪项功能？','适应功能|动机功能|组织功能|信号功能',0,'情绪情感的适应功能帮助有机体调整行为适应环境变化。'],
+[55,'马斯洛的需要层次理论中，位于最高层次的需要是以下哪一项？','安全需要|尊重需要|归属与爱的需要|自我实现的需要',3,'自我实现是最高层次需要。'],
+[56,'心理学中，顺利完成某一项活动所必须具备的心理特征被称为？','气质|性格|能力|意志',2,'能力是完成活动的必备心理特征。'],
+[57,'人格中，代表个体对现实稳定态度和习惯化行为方式的成分是？','气质|性格|能力|动机',1,'性格是对现实稳定态度和行为方式的体现。'],
+[58,'心理学中，个体对自身整体的认知与评价被称为？','自我概念|自尊|自信|自我效能感',0,'自我概念是个人对自己的综合认知和评价。'],
+[59,'个体对自己、他人以及群体的认知被称为？','社会知觉|印象形成|归因|自我概念',0,'社会知觉是对他人、群体及自身的认知。'],
+[60,'个体在群体意见的压力下，放弃自己原有的观点，做出和多数人一致的行为，这个过程被称为？','从众|服从|顺从|模仿',0,'从众是群体压力下改变行为与多数人一致。'],
+[61,'个体按照他人的明确命令或要求做出行动的过程被称为？','从众|服从|顺从|暗示',1,'服从是按照他人命令或要求产生行为。'],
+[62,'发展心理学的核心研究内容是以哪一项？','心理的种系发展|心理的种族发展|个体心理发展|社会心理发展',2,'发展心理学核心是个体从出生到毕生的心理发展过程。'],
+[63,'发展心理学中，新生婴儿期的年龄范围是？','0-1岁|0-3岁|1-3岁|3-6岁',0,'0-1岁为新生婴儿期。'],
+[64,'婴儿期的主要思维特点是？','直观动作思维|具体形象思维|抽象逻辑思维|形式运算思维',0,'婴儿期思维依赖实际动作完成。'],
+[65,'埃里克森的发展理论中，青春期阶段的核心发展任务是？','建立自我同一性|获得勤奋感|获得主动感|获得亲密感',0,'青春期建立自我同一性。'],
+[66,'变态心理学的核心研究对象是？','正常心理活动的运行规律|异常心理活动的表现、成因与发生机制|各类心理障碍的治疗方法|心理测量工具的编制',1,'变态心理学研究异常心理活动。'],
+[67,'以下属于一般心理问题典型特点的是？','情绪反应出现明显泛化|不良情绪持续超过两个月|由现实生活因素引起|社会功能受到严重损害',2,'一般心理问题由现实因素引发。'],
+[68,'心理测量的核心构成要素是以下哪一项？','参照点|单位|量表|常模',2,'量表是心理测量的核心要素。'],
+[69,'标准化心理测验的编制工作，首要完成的环节是下列哪一项？','确定测验的目的与用途|编写具体测验项目|对初编项目开展预测验|调整整合合成最终测验',0,'确定测验目的是编制测验的第一步。'],
+[70,'根据咨询心理学对完整咨询过程的划分，下列属于心理咨询基本阶段的是哪项？','初始评估与诊断阶段|咨询方案实施阶段|咨询效果巩固阶段|以上都是',3,'完整咨询阶段包括初始评估、方案实施、效果巩固。'],
+[71,'下列选项中，符合基础心理学核心研究对象定位的是哪项？','社会情境中的群体心理与互动行为|正常个体心理活动的最普遍、最一般规律|儿童群体的心理发展变化规律|各类异常心理活动的表现与机制',1,'基础心理学研究正常成人心理活动的一般规律。'],
+[72,'发展心理学的研究方法中，可以在短时间内同时考察不同年龄组被试心理发展特点的研究设计是？','横向研究|纵向研究|聚合交叉研究|观察研究',0,'横向研究在同一时间点考察不同年龄组。'],
+[73,'基础心理学是心理学科的基础分支，它以正常成人的什么为研究对象？','心理现象|行为表现|精神疾病|社会互动',0,'基础心理学以正常成人的心理现象为研究对象。'],
+[74,'以下属于情绪状态的是哪一项？','心境、激情、应激|快乐、愤怒、恐惧|道德感、理智感|情感、情绪',0,'心境、激情、应激是典型的情绪状态。'],
+[75,'强调"自我实现"的心理学流派是？','行为主义|精神分析|人本主义|认知心理学',2,'人本主义强调自我实现。'],
+[76,'罗杰斯认为心理咨询应营造以下哪种氛围？','指导性氛围|无条件积极关注|对抗性氛围|标准化流程',1,'罗杰斯强调无条件的积极关注。'],
+[77,'行为主义心理学认为心理学的应研究对象是？','意识|行为|潜意识|认知',1,'行为主义研究可观察的行为。'],
+[78,'以下属于精神分析学派理论观点的是？','自我实现|条件反射|潜意识冲突|认知失调',2,'精神分析强调潜意识和冲突。'],
+[79,'系统脱敏法主要用于治疗？','抑郁症|恐惧症|精神分裂|人格障碍',1,'系统脱敏是治疗恐惧症的常用方法。'],
+[80,'心理咨询师在会谈中最重要的倾听方式是？','被动倾听|共情倾听|选择性倾听|批判性倾听',1,'共情倾听是心理咨询的核心技术。'],
+[81,'以下哪个不属于心理咨询的基本原则？','保密|主动|中立|价值干预',3,'咨询师应保持价值中立而非干预。'],
+[82,'弗洛伊德认为人格结构由以下哪部分组成？','本我、自我、超我|意识、前意识|自我概念|认知结构',0,'弗洛伊德的人格结构三部分。'],
+[83,'智力测验中，韦氏智力测验的结果用以下哪种分数表示？','智商(IQ)|情商(EQ)|心理年龄|等级',0,'韦氏智力测验用智商表示结果。'],
+[84,'心理健康的标准不包括以下哪项？','智力正常|情绪稳定|从不生气|良好的人际关系',2,'适度的情绪表达也很健康。'],
+[85,'在心理咨询中，"共情"指的是？','同情求助者|理解并体验求助者的内心世界|感情共鸣|给求助者建议',1,'共情是理解求助者的内心世界。'],
+[86,'以下不属于发展心理学研究内容的是？','婴儿认知发展|青少年心理变化|人格测量|老年心理适应',2,'人格测量属于心理测量学。'],
+[87,'成人智力发展的一般特点是？','晶体智力上升，流体智力下降|晶体智力下降，流体智力上升|都上升|都下降',0,'晶体智力随年龄增长，流体智力随年龄下降。'],
+[88,'侵犯行为产生的主要原因不包括？','本能|挫折|榜样学习|遗传',3,'侵犯行为主要受环境和社会因素影响。'],
+[89,'群体极化是指？','群体决策更保守|群体决策更冒险|群体成员意见趋于一致|群体成员分裂',2,'群体极化指群体决策的极端化倾向。'],
+[90,'偏见产生的原因不包括？','社会学习|群体冲突|认知偏差|智力差异',3,'偏见主要由社会和心理因素导致。'],
+[91,'心理咨询中的"价值中立"原则是指？','咨询师无价值观|咨询师不将自己的价值观强加给求助者|完全服从求助者|咨询师介入价值判断',1,'价值中立的含义。'],
+[92,'以下因素中最影响心理咨询效果的是？','咨询师的年龄|咨询关系的质量|咨询室的装修|咨询时间长短',1,'咨询关系质量是效果的关键因素。'],
+[93,'求助者中心疗法的创立者是？','弗洛伊德|罗杰斯|华生|斯金纳',1,'罗杰斯创立求助者中心疗法。'],
+[94,'理性情绪行为疗法(REBT)的创立者是？','弗洛伊德|罗杰斯|埃利斯|贝克',2,'埃利斯创立理性情绪行为疗法。'],
+[95,'认知行为疗法强调的核心概念是？','潜意识冲突|条件反射|认知对情绪和行为的影响|自我实现',2,'认知行为疗法关注认知对行为的影响。'],
+[96,'以下属于心理危机特点的是？','长期性|孤立性|普遍性|无害性',2,'心理危机具有普遍性。'],
+[97,'心理咨询师进行诊断时应遵循的伦理原则是？','先入为主|贴标签|避免武断诊断|快速诊断',2,'避免武断诊断是对求助者的负责。'],
+[98,'以下属于积极应对压力的方式的是？','酗酒|寻求社会支持|逃避|否认',1,'社会支持是积极的应对方式。'],
+[99,'心理学研究中最常用的研究方法之一是？','实验法|占星术|冥想|直觉',0,'实验法是心理学常用研究方法。']
+];for(var i=0;i<qs.length;i++){var o=qs[i][2].split('|');D.push({num:qs[i][0],q:qs[i][1],o:o,a:qs[i][3],e:qs[i][4],type:'d'})}})();
+// ======== 多选题 (25道, 100-124) ========
+(function(){var qs=[
+[100,'以下属于心理过程的有哪些？','认知过程|情绪情感过程|意志过程|人格特征',[0,1,2],'心理过程包括认知、情绪情感和意志过程。'],
+[101,'以下属于知觉基本特性的有？','选择性|整体性|恒常性|理解性',[0,1,2,3],'知觉有选择、整体、恒常、理解四个基本特性。'],
+[102,'心理学的主要研究方法包括？','观察法|实验法|调查法|个案法',[0,1,2,3],'观察、实验、调查、个案都是常用方法。'],
+[103,'根据埃里克森的理论，成年期的发展任务包括？','获得亲密感|获得繁衍感|获得自我完善感|建立自我同一性',[0,1,2],'成年期包括获得亲密感(早期)、繁衍感(中期)、自我完善感(晚期)。'],
+[104,'以下哪些属于社会化的主体？','家庭|学校|大众传媒|同龄群体',[0,1,2,3],'家庭、学校、大众传媒、同龄群体都是社会化的主体。'],
+[105,'心理咨询师应遵守的伦理原则包括？','保密原则|知情同意原则|专业胜任力原则|避免多重关系',[0,1,2,3],'心理咨询的基本伦理原则包括以上各项。'],
+[106,'以下属于异常心理判断标准的有？','内省经验标准|社会适应标准|医学标准|统计学标准',[0,1,2,3],'判断心理异常的四类标准。'],
+[107,'心理危机干预的基本原则包括？','及时性|主动性|就近性|整体性',[0,1,2,3],'心理危机干预的基本要求。'],
+[108,'以下属于心理防御机制的有？','压抑|投射|升华|合理化',[0,1,2,3],'这些都是常见的心理防御机制。'],
+[109,'发展心理学研究的主要设计类型包括？','横向研究|纵向研究|聚合交叉研究|实验研究',[0,1,2],'发展心理学特有的三种研究设计。'],
+[110,'影响心理健康的因素包括？','生物因素|心理因素|社会因素|文化因素',[0,1,2,3],'心理健康受多因素综合影响。'],
+[111,'以下属于认知行为疗法特点的有？','结构性强|时间短|聚焦当前问题|强调认知改变',[0,1,2,3],'认知行为疗法的典型特征。'],
+[112,'团体心理咨询的治疗因素包括？','利他性|普同性|人际学习|希望重塑',[0,1,2,3],'团体咨询的独特治疗因素。'],
+[113,'心理咨询师的基本技能包括？','倾听|共情|提问|面质',[0,1,2,3],'心理咨询的四大基本技能。'],
+[114,'心理评估的主要方法包括？','访谈法|观察法|心理测验法|生物检查法',[0,1,2],'心理评估的三大方法。'],
+[115,'应激源的类型包括？','生物性应激源|心理性应激源|社会性应激源|文化性应激源',[0,1,2,3],'四类应激源涵盖了各种压力来源。'],
+[116,'心理健康服务的形式包括？','个体咨询|团体咨询|家庭治疗|网络咨询',[0,1,2,3],'多种形式满足不同需求。'],
+[117,'以下属于人本主义心理学核心观点的有？','强调人的主观能动性|关注自我实现|重视无条件积极关注|人的本质是善的',[0,1,2,3],'人本主义的基本主张。'],
+[118,'心理咨询设置的主要内容包括？','时间|地点|费用|保密约定',[0,1,2,3],'咨询设置是专业工作的基础。'],
+[119,'以下哪些因素会影响记忆效果？','记忆材料的性质|学习程度|复习策略|情绪状态',[0,1,2,3],'影响记忆的多种因素。'],
+[120,'人格的特征包括？','独特性|稳定性|整体性|社会性',[0,1,2,3],'人格的基本特征。'],
+[121,'创造性思维的特点包括？','流畅性|变通性|独创性|精巧性',[0,1,2,3],'创造性思维的四个特征。'],
+[122,'影响问题解决的因素包括？','问题表征|定势|功能固着|知识经验',[0,1,2,3],'影响问题解决的多种因素。'],
+[123,'心理咨询的整合取向包括哪些方面？','理论整合|技术整合|关系整合|文化整合',[0,1,2,3],'心理咨询整合的四个方面。'],
+[124,'心理学研究发现，积极情绪的功能包括？','拓宽认知资源|建立个人资源|增强心理韧性|促进社会互动',[0,1,2,3],'积极情绪具有拓展建设功能。']
+];for(var i=0;i<qs.length;i++){var o=qs[i][2].split('|');D.push({num:qs[i][0],q:qs[i][1],o:o,a:qs[i][3],e:qs[i][4],type:'x'})}})();
+// ======== 排序 ========
+D.sort(function(a,b){return a.num-b.num});
+// ======== JS交互 ========
+var x=0,as=[],dn=false,sl=[],curFilter='all';
+function $(id){return document.getElementById(id)}
+function _s(id){['qz','rs','ls'].forEach(function(e){$(e).style.display='none'});$(id).style.display='block'}
+function _gb(){_s('ls');_lo()}
+function _lo(){
+  var l=$('ls'),h='<div class=st><div class="stb on" data-f=all>全部</div><div class=stb data-f=p>判断题</div><div class=stb data-f=d>单选题</div><div class=stb data-f=x>多选题</div></div>';
+  h+='<div class=sec-title>综合考试·题库练习</div>';
+  h+='<div class=sec-sub>共125道题 · 单选50道 · 多选25道 · 判断50道 · 满分100分 · 60分合格</div>';
+  h+='<div id=ql></div>';
+  l.innerHTML=h;
+  var stb=l.querySelectorAll('.stb');
+  for(var i=0;i<stb.length;i++)stb[i].onclick=function(){_sf(this.getAttribute('data-f'))};
+  _rf();
+}
+function _sf(f){curFilter=f;
+  var stb=document.querySelectorAll('.stb');
+  for(var i=0;i<stb.length;i++)stb[i].className='stb'+(stb[i].getAttribute('data-f')===f?' on':'');
+  _rf();
+}
+function _rf(){var ql=$('ql'),f=curFilter,h='';for(var i=0;i<D.length;i++){var q=D[i];if(f!=='all'&&q.type!==f)continue;var label={'p':'判','d':'单','x':'多'}[q.type];var status='';if(as[i]!==undefined)status=as[i].c?'✓':'✗';h+='<div class=cc onclick=_st('+i+')><div class="n '+q.type+'">'+label+'</div><div class=i><div class=t>'+(i+1)+'. '+q.q.slice(0,25)+(q.q.length>25?'...':'')+'</div><div class=m>'+status+'</div></div><div class=a>&#8250;</div></div>';}ql.innerHTML=h||'<div style=text-align:center;padding:2rem;color:rgba(255,255,255,.3)>暂无题目</div>';}
+function _st(i){x=i;as=[];dn=false;_s('qz');_rq();}
+function _rq(){var q=D[x],z=$('qz'),h='';h+='<div style=display:flex;justify-content:space-between;margin-bottom:.6rem>';h+='<button onclick=_gb() style=background:none;border:none;color:rgba(255,255,255,.5);font-size:.82rem;cursor:pointer>&#8592; 返回</button>';h+='<span style=font-size:.8rem;color:rgba(255,255,255,.4)>第'+(x+1)+'/'+D.length+'题</span></div>';var tp={'p':'判断题','d':'单选题','x':'多选题'}[q.type];var sc=q.type==='p'?'0.5分':q.type==='d'?'1分':'1分';h+='<div class=q><div class=qn><span>'+tp+'</span><span>'+sc+'</span></div>';h+='<div class=qt>'+q.q+'</div>';if(q.type==='x')h+='<div class=qh>（可多选，请选出所有正确答案）</div>';h+='<div id=ops></div><div class=ex id=ex></div></div>';h+='<button class=bn id=bn disabled>'+(q.type==='x'?'提交答案':'确认')+'</button>';z.innerHTML=h;if(q.type==='p'){h='<div class=op data-v=1><span class=l>✓</span><span>正确</span></div><div class=op data-v=0><span class=l>✗</span><span>错误</span></div>';}else{h='';for(var j=0;j<q.o.length;j++)h+='<div class=op data-n='+j+'><span class=l>'+L[j]+'</span><span>'+q.o[j]+'</span></div>';}$('ops').innerHTML=h;sl=[];dn=false;var ops=$('ops').children;if(q.type==='p'){for(var j=0;j<ops.length;j++)ops[j].onclick=function(){_skp(parseInt(this.getAttribute('data-v')))}}else if(q.type==='d'){for(var j=0;j<ops.length;j++)ops[j].onclick=function(){_sk(parseInt(this.getAttribute('data-n')))}}else{for(var j=0;j<ops.length;j++)ops[j].onclick=function(){_tk(parseInt(this.getAttribute('data-n')))}}$('bn').onclick=function(){if(dn)_nq();else if(q.type==='x')_sm()}}
+function _skp(v){if(dn)return;dn=true;var q=D[x],ic=v===q.a;as[x]={s:[v],c:ic};var ops=$('ops').children;for(var j=0;j<ops.length;j++){ops[j].className='op di';var val=parseInt(ops[j].getAttribute('data-v'));if(val===q.a)ops[j].className='op cr di';else if(val===v&&!ic)ops[j].className='op wr di';}$('ex').textContent=q.e;$('ex').style.display='block';$('bn').disabled=false}
+function _tk(idx){if(dn)return;var i=sl.indexOf(idx);var el=$('ops').children[idx];i>-1?(sl.splice(i,1),el.className='op'):(sl.push(idx),el.className='op sl');$('bn').disabled=sl.length===0}
+function _sk(idx){if(dn)return;dn=true;var q=D[x],els=$('ops').children,ic=idx===q.a;as[x]={s:[idx],c:ic};for(var j=0;j<els.length;j++){els[j].className='op di';if(j===q.a)els[j].className='op cr di';else if(j===idx&&!ic)els[j].className='op wr di';}$('ex').textContent=q.e;$('ex').style.display='block';$('bn').disabled=false}
+function _sm(){if(dn||sl.length===0)return;dn=true;var q=D[x],els=$('ops').children,ca=q.a;if(!Array.isArray(ca))ca=[ca];var ic=sl.length===ca.length&&sl.every(function(v){return ca.indexOf(v)>-1});as[x]={s:sl.slice(),c:ic};for(var j=0;j<els.length;j++){els[j].className='op di';if(ca.indexOf(j)>-1)els[j].className='op cr di';else if(sl.indexOf(j)>-1&&ca.indexOf(j)===-1)els[j].className='op wr di';}$('ex').textContent=q.e;$('ex').style.display='block';$('bn').disabled=false;$('bn').textContent='下一题'}
+function _nq(){if(x<D.length-1){x++;_rq()}else{_sr()}}
+function _sr(){var correct=0,pScore=0,dScore=0,xScore=0;for(var i=0;i<D.length;i++){if(!as[i])continue;var q=D[i];if(as[i].c){if(q.type==='p')pScore+=0.5;else if(q.type==='d')dScore+=1;else xScore+=1;correct++}}var score=Math.round(pScore+dScore+xScore);var passed=score>=60;var z=$('rs'),h='';h+='<div class=rs><div class=sc style="border-color:'+(passed?'#50c878':'#ff5a5a')+';color:'+(passed?'#50c878':'#ff5a5a')+'">'+score+'</div>';h+='<h2 style=color:'+(passed?'#50c878':'#ff5a5a')+'>'+(passed?'恭喜通过':'继续加油')+'</h2>';h+='<p class=rp>'+correct+'/'+D.length+'题正确 · 满分100分 · 60分合格</p>';h+='<div style=display:flex;gap:.4rem;justify-content:center;margin-bottom:1.2rem>';h+='<div style=padding:.3rem .5rem;border-radius:6px;background:rgba(80,200,120,.08);font-size:.75rem;color:#50c878>判断 '+pScore.toFixed(1)+'/'+(50*0.5)+'</div>';h+='<div style=padding:.3rem .5rem;border-radius:6px;background:rgba(80,200,120,.08);font-size:.75rem;color:#50c878>单选 '+dScore+'/'+50+'</div>';h+='<div style=padding:.3rem .5rem;border-radius:6px;background:rgba(80,200,120,.08);font-size:.75rem;color:#50c878>多选 '+xScore+'/'+25+'</div>';h+='</div>';h+='<div class=rv><div class=rvt>答题回顾</div>';for(var i=0;i<D.length;i++){var a=as[i];if(!a)continue;var q=D[i];var sa=a.s.map(function(j){return q.o[j]}).join('、');var ca=Array.isArray(q.a)?q.a.map(function(j){return q.o[j]}).join('、'):q.o[q.a];h+='<div class=rvi><div class=rqq>'+(i+1)+'. '+q.q+'</div>';h+='<div class=rqa>'+(a.c?'<span style=color:#50c878;font-weight:500>✓ '+sa+'</span>':'<span style=color:#ff5a5a;text-decoration:line-through>✗ '+sa+'</span> → <span style=color:#50c878;font-weight:500>'+ca+'</span>')+'</div></div>'}h+='</div>';h+='<div class=rsb><button onclick=_st(0)>重新答题</button><button class=rsp onclick=_gb()>返回题库</button></div></div>';z.innerHTML=h;_s('rs')}
+_lo();
+</script></body></html>
