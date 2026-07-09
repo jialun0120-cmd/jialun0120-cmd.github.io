@@ -32,9 +32,9 @@ function showResume(){
 window.addEventListener('beforeunload',sv);
 setTimeout(function(){
   try{
-    if(typeof _sk==='function'){var o1=_sk;_sk=function(i){o1(i);setTimeout(sv,0)}}
-    if(typeof _sm==='function'){var o2=_sm;_sm=function(){o2();setTimeout(sv,0)}}
-    if(typeof start'uiz==='function'){var o3=start'uiz;start'uiz=function(l,s){o3(l,s);clr()}}
+    if(typeof _sk===typeof _sk){var o1=_sk;_sk=function(i){o1(i);setTimeout(sv,0)}}
+    if(typeof _sm===typeof _sk){var o2=_sm;_sm=function(){o2();setTimeout(sv,0)}}
+    if(typeof startQuiz===typeof _sk){var o3=startQuiz;startQuiz=function(l,s){o3(l,s);clr()}}
   }catch(e){}
   showResume();
 },200);
