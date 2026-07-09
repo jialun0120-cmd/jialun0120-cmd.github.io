@@ -74,7 +74,7 @@ function showLevels(){
   }
   ls.innerHTML=h;
   var cs=ls.querySelectorAll('.cc');for(var i=0;i<cs.length;i++)cs[i].onclick=function(){showSections(this.getAttribute('data-l'))};
-  _s('ls');
+  _s('ls');ck_resume();
 }
 
 function showSections(level){
@@ -105,7 +105,7 @@ function showSubSections(level,section){
 }
 
 function startQuiz(level,section,subSection){
-  curLevel=level;curSection=section;curSubSection=subSection;
+  curLevel=level;clr();curSection=section;curSubSection=subSection;
   var src=D[level][section];if(subSection)src=src[subSection];allQ=src;x=0;as=[];
   var nm=section.replace('基础知识-助理级','基础知识').replace('操作技能-助理级','操作技能').replace('基础知识-初级','基础知识').replace('操作技能-初级','操作技能');
   if(subSection)nm+='-'+subSection;document.getElementById('ht').textContent=nm;document.getElementById('b1').style.display='block';_rq();
@@ -125,9 +125,9 @@ function goBackFromQuiz(){showSections(curLevel);}
 
 function _tk(idx){if(dn)return;var i=sl.indexOf(idx),el=document.querySelectorAll('#ops .op')[idx];if(i>-1){sl.splice(i,1);el.className='op'}else{sl.push(idx);el.className='op sl'}document.getElementById('bn').disabled=sl.length===0}
 
-function _sk(idx){if(dn)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ic=idx===q.a;as[x]={s:[idx],c:ic};for(var j=0;j<els.length;j++){els[j].className='op di';if(j===q.a)els[j].className='op cr di';else if(j===idx&&!ic)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block'}
+function _sk(idx){if(dn)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ic=idx===q.a;as[x]={s:[idx],c:ic};fo;sv()r(var j=0;j<els.length;j++){els[j].className='op di';if(j===q.a)els[j].className='op cr di';else if(j===idx&&!ic)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block'}
 
-function _sm(){if(dn||sl.length===0)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ca=q.a;if(!Array.isArray(ca))ca=[ca];var ic=sl.length===ca.length&&sl.every(function(v){return ca.indexOf(v)>-1});as[x]={s:sl.slice(),c:ic};for(var j=0;j<els.length;j++){els[j].className='op di';if(ca.indexOf(j)>-1)els[j].className='op cr di';else if(sl.indexOf(j)>-1&&ca.indexOf(j)===-1)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block';document.getElementById('bn').textContent='下一题';document.getElementById('bn').disabled=false}
+function _sm(){if(dn||sl.length===0)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ca=q.a;if(!Array.isArray(ca))ca=[ca];var ic=sl.length===ca.length&&sl.every(function(v){return ca.indexOf(v)>-1});as[x]={s:sl.slice(),c:ic};fo;sv()r(var j=0;j<els.length;j++){els[j].className='op di';if(ca.indexOf(j)>-1)els[j].className='op cr di';else if(sl.indexOf(j)>-1&&ca.indexOf(j)===-1)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block';document.getElementById('bn').textContent='下一题';document.getElementById('bn').disabled=false}
 
 function _nq(){if(x<allQ.length-1){x++;_rq()}else{_sr()}}
 
@@ -147,7 +147,12 @@ function _sr(){
   _s('rs');
 }
 
-showLevels();
+
+// resume feature
+var SK=Q.psych_prog;
+function sv(){if(!curLevel)return;localStorage.setItem(SK,JSON.stringify({l:curLevel,sec:curSection,sub:curSubSection||'+x:x,as:as,t:Date.now()}))}
+function clr(){localStorage.removeItem(SK)}
+function ck_resume(){try{var r=localStorage.getItem(SK);if(!r)return;var s=JSON.parse(r);if(!s.l)return;var d=document.getElementById('.ls');var h=document.createElement('.div');h.style.cssText='.background:rgba(80,200,120,.08);border:1px solid rgba(80,200,120,.3);border-radius:12px;padding:.75rem 1rem;margin-bottom:.85rem;cursor:pointer';h.onclick=function(){try{var d2=JSON.parse(localStorage.getItem(SK));if(!d2||!d2.l)return;curLevel=d2.l;curSection=d2.sec;curSubSection=d2.sub||'+';var src=D[curLevel][curSection];if(curSubSection)src=src[curSubSection];all'=src;x=d2.x||0;as=d2.as||[];document.getElementById('.ht').textContent=curSection;document.getElementById('.b1').style.display='.block';_rq()}catch(e){}};h.innerHTML='.<div style=font-size:.88rem;color:#50c878;font-weight:600;margin-bottom:.2rem>&#9654; 继续上次答题</div><div style=font-size:.75rem;color:rgba(255,255,255,.45)>('+s.l+'+ > '+nm+'+ · 第'+(s.x+1)+'+题'+'+</div>';d.insertBefore(h,d.firstChild)}catch(e){}}showLevels();
 </script>
 </body>
 </html>
