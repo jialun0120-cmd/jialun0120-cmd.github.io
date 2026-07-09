@@ -1,3 +1,42 @@
+// Cont;ck()inue from last ti;sv()me
+var SK='qz_psych_prog';
+function sv(){
+  if(!curLevel||!curSection)return;
+  var s={l:curLevel,sec:curSection,sub:curSubSection||'',x:x,as:as};
+  try{localStorage.setItem(SK,JSON.stringify(s))}catch(e){}
+}
+function clr(){
+  try{localStorage.removeItem(SK)}catch(e){}
+}
+function ck(){
+  try{
+    var r=localStorage.getItem(SK);if(!r)return;
+    var s=JSON.parse(r);if(!s||!s.l||!s.sec)return;
+    var nm=s.sec.replace('基础知识-助理级','基础知识').replace('操作技能-助理级','操作技能').replace('基础知识-初级','基础知识').replace('操作技能-初级','操作技能');
+    if(s.sub)nm+='-'+s.sub;
+    var cnt=0;for(var k in s.as)if(s.as[k])cnt++;
+    var d=document.createElement('div');
+    d.style.cssText='background:rgba(80,200,120,.08);border:1px solid rgba(80,200,120,.3);border-radius:12px;padding:.75rem 1rem;margin-bottom:.85rem;cursor:pointer';
+    d.onclick=function(){rsm()};
+    d.innerHTML='<div class=sec-title style=color:#50c878;margin-bottom:.2rem>&#9654; 继续上次答题</div><div style=font-size:.75rem;color:rgba(255,255,255,.45)>'+s.l+' > '+nm+' · 第'+(s.x+1)+'题 · '+cnt+'题已答</div>';
+    var ls=document.getElementById('ls');
+    ls.insertBefore(d,ls.firstChild);
+  }catch(e){}
+}
+function rsm(){
+  try{
+    var r=localStorage.getItem(SK);if(!r){showLevels();return;}
+    var s=JSON.parse(r);
+    curLevel=s.l;curSection=s.sec;curSubSection=s.sub||'';
+    var src=D[curLevel][curSection];if(curSubSection)src=src[curSubSection];
+    allQ=src;x=s.x||0;as=s.as||[];
+    var nm=s.sec.replace('基础知识-助理级','基础知识').replace('操作技能-助理级','操作技能').replace('基础知识-初级','基础知识').replace('操作技能-初级','操作技能');
+    if(curSubSection)nm+='-'+curSubSection;
+    document.getElementById('ht').textContent=nm;
+    document.getElementById('b1').style.display='block';
+    _rq();
+  }catch(e){showLevels();}
+}
 <!DOCTYPE html>
 <html lang=zh-CN>
 <head>
@@ -74,8 +113,47 @@ function showLevels(){
   }
   ls.innerHTML=h;
   var cs=ls.querySelectorAll('.cc');for(var i=0;i<cs.length;i++)cs[i].onclick=function(){showSections(this.getAttribute('data-l'))};
-  _s('ls');
+  _s('ls');ck();ck();
+}// Continue from last time
+var SK='qz_psych_prog';
+function sv(){
+  if(!curLevel||!curSection)return;
+  var s={l:curLevel,sec:curSection,sub:curSubSection||'',x:x,as:as};
+  try{localStorage.setItem(SK,JSON.stringify(s))}catch(e){}
 }
+function clr(){
+  try{localStorage.removeItem(SK)}catch(e){}
+}
+function ck(){
+  try{
+    var r=localStorage.getItem(SK);if(!r)return;
+    var s=JSON.parse(r);if(!s||!s.l||!s.sec)return;
+    var nm=s.sec.replace('基础知识-助理级','基础知识').replace('操作技能-助理级','操作技能').replace('基础知识-初级','基础知识').replace('操作技能-初级','操作技能');
+    if(s.sub)nm+='-'+s.sub;
+    var cnt=0;for(var k in s.as)if(s.as[k])cnt++;
+    var d=document.createElement('div');
+    d.style.cssText='background:rgba(80,200,120,.08);border:1px solid rgba(80,200,120,.3);border-radius:12px;padding:.75rem 1rem;margin-bottom:.85rem;cursor:pointer';
+    d.onclick=function(){rsm()};
+    d.innerHTML='<div class=sec-title style=color:#50c878;margin-bottom:.2rem>&#9654; 继续上次答题</div><div style=font-size:.75rem;color:rgba(255,255,255,.45)>'+s.l+' > '+nm+' · 第'+(s.x+1)+'题 · '+cnt+'题已答</div>';
+    var ls=document.getElementById('ls');
+    ls.insertBefore(d,ls.firstChild);
+  }catch(e){}
+}
+function rsm(){
+  try{
+    var r=localStorage.getItem(SK);if(!r){showLevels();return;}
+    var s=JSON.parse(r);
+    curLevel=s.l;curSection=s.sec;curSubSection=s.sub||'';
+    var src=D[curLevel][curSection];if(curSubSection)src=src[curSubSection];
+    allQ=src;x=s.x||0;as=s.as||[];
+    var nm=s.sec.replace('基础知识-助理级','基础知识').replace('操作技能-助理级','操作技能').replace('基础知识-初级','基础知识').replace('操作技能-初级','操作技能');
+    if(curSubSection)nm+='-'+curSubSection;
+    document.getElementById('ht').textContent=nm;
+    document.getElementById('b1').style.display='block';
+    _rq();
+  }catch(e){showLevels();}
+}
+
 
 function showSections(level){
   pathStack.push({t:'s',l:level});document.getElementById('b1').style.display='block';document.getElementById('ht').textContent='水平评价能力测试 '+level;curLevel=level;
@@ -105,7 +183,7 @@ function showSubSections(level,section){
 }
 
 function startQuiz(level,section,subSection){
-  curLevel=level;curSection=section;curSubSection=subSection;
+  curLevel=level;clr();clr();curSection=section;curSubSection=subSection;
   var src=D[level][section];if(subSection)src=src[subSection];allQ=src;x=0;as=[];
   var nm=section.replace('基础知识-助理级','基础知识').replace('操作技能-助理级','操作技能').replace('基础知识-初级','基础知识').replace('操作技能-初级','操作技能');
   if(subSection)nm+='-'+subSection;document.getElementById('ht').textContent=nm;document.getElementById('b1').style.display='block';_rq();
@@ -125,9 +203,9 @@ function goBackFromQuiz(){showSections(curLevel);}
 
 function _tk(idx){if(dn)return;var i=sl.indexOf(idx),el=document.querySelectorAll('#ops .op')[idx];if(i>-1){sl.splice(i,1);el.className='op'}else{sl.push(idx);el.className='op sl'}document.getElementById('bn').disabled=sl.length===0}
 
-function _sk(idx){if(dn)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ic=idx===q.a;as[x]={s:[idx],c:ic};for(var j=0;j<els.length;j++){els[j].className='op di';if(j===q.a)els[j].className='op cr di';else if(j===idx&&!ic)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block'}
+function _sk(idx){if(dn)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ic=idx===q.a;as[x]={s:[idx],c:ic};sv();sv();for(var j=0;j<els.length;j++){els[j].className='op di';if(j===q.a)els[j].className='op cr di';else if(j===idx&&!ic)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block'}
 
-function _sm(){if(dn||sl.length===0)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ca=q.a;if(!Array.isArray(ca))ca=[ca];var ic=sl.length===ca.length&&sl.every(function(v){return ca.indexOf(v)>-1});as[x]={s:sl.slice(),c:ic};for(var j=0;j<els.length;j++){els[j].className='op di';if(ca.indexOf(j)>-1)els[j].className='op cr di';else if(sl.indexOf(j)>-1&&ca.indexOf(j)===-1)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block';document.getElementById('bn').textContent='下一题';document.getElementById('bn').disabled=false}
+function _sm(){if(dn||sl.length===0)return;dn=true;var q=allQ[x],els=document.querySelectorAll('#ops .op'),ca=q.a;if(!Array.isArray(ca))ca=[ca];var ic=sl.length===ca.length&&sl.every(function(v){return ca.indexOf(v)>-1});as[x]={s:sl.slice(),c:ic};sv();for(var j=0;j<els.length;j++){els[j].className='op di';if(ca.indexOf(j)>-1)els[j].className='op cr di';else if(sl.indexOf(j)>-1&&ca.indexOf(j)===-1)els[j].className='op wr di'}document.getElementById('ex').textContent=q.e;document.getElementById('ex').style.display='block';document.getElementById('bn').textContent='下一题';document.getElementById('bn').disabled=false}
 
 function _nq(){if(x<allQ.length-1){x++;_rq()}else{_sr()}}
 
@@ -143,8 +221,8 @@ function _sr(){
     rh+='</div>';
   }
   var e=document.getElementById('rs');
-  e.innerHTML='<div style=width:110px;height:110px;border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border:3px solid '+(pa?'#50c878':'#ff5a5a')+';font-size:2.2rem;font-weight:700;color:'+(pa?'#50c878':'#ff5a5a')+'>'+p+'%</div><h2 style=font-size:1.15rem>'+(pa?'通过！':'继续加油')+'</h2><p style=font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:1.2rem>'+co+'/'+t+'题正确</p>'+rh+'<div style=display:flex;gap:.55rem;flex-wrap:wrap><button style="flex:1;min-width:120px;padding:.75rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);color:#e8e6e3" onclick=startQuiz(curLevel,curSection,curSubSection)>重新答题</button><button style="flex:1;min-width:120px;padding:.75rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);color:#e8e6e3" onclick=showSections(curLevel)>返回板块</button><button style="flex:1;min-width:120px;padding:.75rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;background:linear-gradient(135deg,#2d8a4e,#50c878);color:#fff" onclick=showLevels()>返回首页</button></div>';
-  _s('rs');
+  e.innerHTML='<div style=width:110px;height:110px;border-radius:50%;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border:3px solid '+(pa?'#50c878':'#ff5a5a')+';font-size:2.2rem;font-weight:700;color:'+(pa?'#50c878':'#ff5a5a')+'>'+p+'%</div><h2 style=font-size:1.15rem>'+(pa?'通过！':'继续加油')+'</h2><p style=font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:1.2rem>'+co+'/'+t+'题正确</p>'+rh+'<div style=display:flex;gap:.55rem;flex-wrap:wrap><button style="flex:1;min-width:120px;padding:.75rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);color:#e8e6e3" onclick=startQuiz(curLevel,curSection,curSubSection)>重新答题</button><button style="flex:1;min-width:120px;padding:.75rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);color:#e8e6e3" onclick=showSections(curLevel)>返回板块</button><button style="flex:1;min-width:120px;padding:.75rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;background:linear-gradient(135deg,#2d8a4e,#50c878);color:#fff" onclick=clr();showLevels()>返回首页</button></div>';
+  clr();_s('rs');
 }
 
 showLevels();
