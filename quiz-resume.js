@@ -9,8 +9,9 @@ function showResume(){
   try{
     var r=localStorage.getItem(SK);if(!r)return;
     var s=JSON.parse(r);if(!s||!s.l||!s.sec)return;
-    var ls=document.getElementById('ls');if(!ls||!ls.firstChild)return;
-    var d=document.createElement('div');
+    var ls=document.getElementById('ls');if(!ls)return;
+    if(document.getElementById('resumeBtn'))return;
+    var d=document.createElement('div');d.id='resumeBtn';
     d.style.cssText='background:rgba(80,200,120,.08);border:1px solid rgba(80,200,120,.3);border-radius:12px;padding:.75rem 1rem;margin-bottom:.85rem;cursor:pointer';
     d.onclick=function(){
       try{
@@ -35,6 +36,7 @@ setTimeout(function(){
     if(typeof _sk===typeof _sk){var o1=_sk;_sk=function(i){o1(i);setTimeout(sv,0)}}
     if(typeof _sm===typeof _sk){var o2=_sm;_sm=function(){o2();setTimeout(sv,0)}}
     if(typeof startQuiz===typeof _sk){var o3=startQuiz;startQuiz=function(l,s,ss){o3(l,s,ss);clr()}}
+    if(typeof showLevels===typeof _sk){var o4=showLevels;showLevels=function(){o4();setTimeout(showResume,0)}}
   }catch(e){}
   showResume();
 },200);
